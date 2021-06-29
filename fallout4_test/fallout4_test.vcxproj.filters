@@ -9,209 +9,389 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Source Files\patches">
+    <Filter Include="Source Files\RTTI">
+      <UniqueIdentifier>{35ec8d65-0314-4ba5-b3b8-c4b0d305fd93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\RTTI\NiRTTI">
+      <UniqueIdentifier>{50666074-f04e-49df-b1ef-ebec84513633}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\RTTI">
+      <UniqueIdentifier>{744f2e83-7807-45a2-846e-e098caf43cc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\RTTI\NiRTTI">
+      <UniqueIdentifier>{11571499-241a-44d6-ae8f-ecf1517440b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{e015c614-1eea-42df-b254-b63b981c8468}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{8ac21372-4a9a-4e6b-ac6d-0248039f9a3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Patches">
+      <UniqueIdentifier>{ae770148-f22f-4c77-8ee3-fb61014bba30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Patches">
       <UniqueIdentifier>{6ecca651-f6ac-4430-b4b5-a9d5fb31e2fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Classes">
+      <UniqueIdentifier>{a7766be7-54b7-4d4d-8e6b-5e4819048994}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes">
+      <UniqueIdentifier>{7a39de88-cf1e-4c4d-9288-3967c45c9d73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI\Classes">
+      <UniqueIdentifier>{b7db8a77-7b3c-45db-b7ed-adbc6fbea900}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI\Classes">
+      <UniqueIdentifier>{895435af-7cd1-4201-a693-09007da7f43b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utils">
+      <UniqueIdentifier>{4f2e0375-dc16-4a4b-943c-bb12aafa811a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{bc1302bb-1063-4a3a-89a4-53364001bd4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Patches\CK">
+      <UniqueIdentifier>{9a61be2f-a22e-47e3-a8dc-97bb27863811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Patches\CK">
+      <UniqueIdentifier>{cd26e7a2-a163-4aa0-923d-f4759c8c3eac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tools">
+      <UniqueIdentifier>{729a6042-ea7b-4b04-9748-e89acfd10058}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tools">
+      <UniqueIdentifier>{57f76dce-f933-4e6f-9acd-ab0971e93f8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI\Windows">
+      <UniqueIdentifier>{81dacff4-51da-4b50-87a1-a91f7fe41ed4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI\Windows">
+      <UniqueIdentifier>{ec9ef0a5-0078-47fc-9491-90360ef81de8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Patches\TES">
+      <UniqueIdentifier>{21b55ee5-b253-45aa-b06c-c363d0179815}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{c58ef404-38ca-4c41-b94f-f535f6add608}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI\Theme">
+      <UniqueIdentifier>{4cb3eb36-9af6-4fad-b001-bffbaf9675bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI\Theme">
+      <UniqueIdentifier>{15465807-fb72-43fe-a815-6fe39cdff7e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="__dependencies">
+      <UniqueIdentifier>{81995caa-f5d0-49b7-965d-68c1333396e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="__dependencies\zipper">
+      <UniqueIdentifier>{966ff70e-c235-430f-9b45-98e040be03f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="__dependencies\jDialogs">
+      <UniqueIdentifier>{480afd49-7d48-4f91-a6cb-125fb4154eca}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\dump.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\profiler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\profiler_internal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\xutil.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\MemoryManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\common.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\BSTArray.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiAVObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiColor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiObjectNET.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiRefObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiTransform.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\BSGeometry.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiTexture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiSourceTexture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiAlphaProperty.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiSkinInstance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\patches\TES\Setting.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\patches\TES\BSTList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\common.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\BSTriShape.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\BSDynamicTriShape.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiLight.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiDirectionalLight.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiMatrix.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiPoint.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\BSNiNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\BSMultiBoundNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiRTTI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiCamera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiCullingProcess.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiFrustum.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\config.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\typeinfo\hk_rtti.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\typeinfo\ms_rtti.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiPointer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NavMesh.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\INIReader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\TESForm_CK.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\patches\TES\bhkThreadMemorySource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\INIReader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiPick.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\NiCollisionUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\patches\offsets.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\patches\TES\NiMain\BSMultiIndexTriShape.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\patches\TES\NiMain\NiAlphaProperty.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiAVObject.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiCamera.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiCollisionUtils.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiColor.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiCullingProcess.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiDirectionalLight.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
     </ClInclude>
     <ClInclude Include="src\patches\TES\NiMain\NiFogProperty.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
     </ClInclude>
-    <ClInclude Include="src\patches\CKF4\LogWindow.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\patches\TES\NiMain\NiFrustum.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
     </ClInclude>
-    <ClInclude Include="src\patches\CKF4\Editor.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\patches\TES\NiMain\NiLight.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiMatrix.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiNode.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiObject.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiObjectNET.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiPick.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiPoint.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiPointer.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiRefObject.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiRTTI.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiSkinInstance.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiSourceTexture.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiTexture.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\NiMain\NiTransform.h">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\typeinfo\hk_rtti.h">
+      <Filter>Header Files\RTTI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\typeinfo\ms_rtti.h">
+      <Filter>Header Files\RTTI</Filter>
     </ClInclude>
     <ClInclude Include="src\patches\CKF4\EditorUI.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\UI</Filter>
     </ClInclude>
-    <ClInclude Include="src\patches\CKF4\EditorUIDarkMode.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\patches\TES\MemoryManager.h">
+      <Filter>Header Files\Patches</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\BSTList.h">
+      <Filter>Header Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\TES\BSTArray.h">
+      <Filter>Header Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="src\patches\CKF4\TESForm_CK.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UIMenus.h">
+      <Filter>Header Files\UI\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UIBaseWindow.h">
+      <Filter>Header Files\UI\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UICheckboxControl.h">
+      <Filter>Header Files\UI\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\xutil.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\INIReader.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UtfStr.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\ExperimentalNuukem.h">
+      <Filter>Header Files\Patches\CK</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\TranslateUnicode_CK.h">
+      <Filter>Header Files\Patches\CK</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UIProgressDialog.h">
+      <Filter>Header Files\UI\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\TESDataFileHandler_CK.h">
+      <Filter>Header Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\TESFile_CK.h">
+      <Filter>Header Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\ComClasses.h">
+      <Filter>Header Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tools\INIHookInputToFile.h">
+      <Filter>Header Files\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="src\erase_if.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\EditorUIProgressDialog.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\RenderWindow.h">
+      <Filter>Header Files\UI\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\MainWindow.h">
+      <Filter>Header Files\UI\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\ObjectWindow.h">
+      <Filter>Header Files\UI\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\LogWindow.h">
+      <Filter>Header Files\UI\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\CellViewWindow.h">
+      <Filter>Header Files\UI\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\ResponseWindow.h">
+      <Filter>Header Files\UI\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\DataWindow.h">
+      <Filter>Header Files\UI\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UIImageList.h">
+      <Filter>Header Files\UI\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UIGraphics.h">
+      <Filter>Header Files\UI\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\PopupMenu.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\VarCommon.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\MDIClient.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\ListView.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\TreeView.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\ToolBar.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\CheckBox.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\RadioButton.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\PushButton.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\GroupBox.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\EditText.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\ComboBox.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\StatusBar.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\ScrollBar.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\TrackBar.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\UpDown.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\ListBox.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\ProgressBar.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\CustomBox.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\TimeOfDay.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\Header.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\PageControl.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\RichEdit20.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UIThemeMode.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\PreferencesWindow.h">
+      <Filter>Header Files\UI\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UITheme\Memo.h">
+      <Filter>Header Files\UI\Theme</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\Editor.h">
+      <Filter>Header Files\Patches\CK</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\ShowHideWindow.h">
+      <Filter>Header Files\UI\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\TESCellViewScene_CK.h">
+      <Filter>Header Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\ActorWindow.h">
+      <Filter>Header Files\UI\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Dependencies\zipper\src\zip.h">
+      <Filter>__dependencies\zipper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Dependencies\zipper\src\miniz.h">
+      <Filter>__dependencies\zipper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Dependencies\jDialogs\include\jdialogs.h">
+      <Filter>__dependencies\jDialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\patches\CKF4\UIDialogManager.h">
+      <Filter>Header Files\UI\Classes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\dump.cpp">
-      <Filter>Source Files\patches</Filter>
-    </ClCompile>
     <ClCompile Include="src\profiler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\xutil.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\patches\TES\MemoryManager.cpp">
-      <Filter>Source Files\patches</Filter>
-    </ClCompile>
-    <ClCompile Include="src\patches\TES\NiMain\NiMain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\patches\fileio.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Patches</Filter>
     </ClCompile>
     <ClCompile Include="src\patches\TES\Setting.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\patches\TES\NiMain\NiRTTI.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\typeinfo\hk_rtti.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\typeinfo\ms_rtti.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\typeinfo\ni_rtti.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\common.cpp">
@@ -226,40 +406,258 @@
     <ClCompile Include="src\patches\bnet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\patches\TES\NiMain\NiCollisionUtils.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\patches\offsets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\patches\patches_f4ck.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\patches\CKF4\Editor.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\patches\TES\NiMain\NiRTTI.cpp">
+      <Filter>Source Files\RTTI\NiRTTI</Filter>
     </ClCompile>
-    <ClCompile Include="src\patches\CKF4\EditorUI.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\patches\TES\NiMain\NiMain.cpp">
+      <Filter>Source Files\RTTI\NiRTTI</Filter>
     </ClCompile>
-    <ClCompile Include="src\patches\CKF4\EditorUIDarkMode.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\patches\TES\NiMain\NiCollisionUtils.cpp">
+      <Filter>Source Files\RTTI\NiRTTI</Filter>
     </ClCompile>
-    <ClCompile Include="src\patches\CKF4\LogWindow.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\typeinfo\ni_rtti.cpp">
+      <Filter>Source Files\RTTI\NiRTTI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\typeinfo\hk_rtti.cpp">
+      <Filter>Source Files\RTTI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\typeinfo\ms_rtti.cpp">
+      <Filter>Source Files\RTTI</Filter>
     </ClCompile>
     <ClCompile Include="src\patches\CKF4\TESForm_CK.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UIMenus.cpp">
+      <Filter>Source Files\UI\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UIBaseWindow.cpp">
+      <Filter>Source Files\UI\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UICheckboxControl.cpp">
+      <Filter>Source Files\UI\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UtfStr.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xutil.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\ExperimentalNuukem.cpp">
+      <Filter>Source Files\Patches\CK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\TranslateUnicode_CK.cpp">
+      <Filter>Source Files\Patches\CK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UIProgressDialog.cpp">
+      <Filter>Source Files\UI\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\TESDataFileHandler_CK.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\TESFile_CK.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\threading.cpp">
+      <Filter>Source Files\Patches</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tools\INIHookInputToFile.cpp">
+      <Filter>Source Files\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\EditorUIProgressDialog.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\RenderWindow.cpp">
+      <Filter>Source Files\UI\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\LogWindow.cpp">
+      <Filter>Source Files\UI\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\MainWindow.cpp">
+      <Filter>Source Files\UI\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\ObjectWindow.cpp">
+      <Filter>Source Files\UI\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\CellViewWindow.cpp">
+      <Filter>Source Files\UI\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\ResponseWindow.cpp">
+      <Filter>Source Files\UI\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\DataWindow.cpp">
+      <Filter>Source Files\UI\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\TES\Achievements.cpp">
+      <Filter>Source Files\Patches\TES</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\patches_f4tes.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\window.cpp">
+      <Filter>Source Files\Patches\TES</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\settings.cpp">
+      <Filter>Source Files\Patches\TES</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UIImageList.cpp">
+      <Filter>Source Files\UI\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UIGraphics.cpp">
+      <Filter>Source Files\UI\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\PopupMenu.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\VarCommon.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\MDIClient.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\ListView.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\TreeView.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\ToolBar.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\CheckBox.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\RadioButton.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\PushButton.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\GroupBox.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\EditText.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\ComboBox.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\StatusBar.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\ScrollBar.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\TrackBar.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\UpDown.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\ListBox.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\ProgressBar.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\CustomBox.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\TimeOfDay.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\Header.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\PageControl.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\RichEdit20.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\PreferencesWindow.cpp">
+      <Filter>Source Files\UI\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UITheme\Memo.cpp">
+      <Filter>Source Files\UI\Theme</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\EditorUI.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\Editor.cpp">
+      <Filter>Source Files\Patches\CK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dump.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UIThemeMode.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\ShowHideWindow.cpp">
+      <Filter>Source Files\UI\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\TESCellViewScene_CK.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\INIReader.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\ActorWindow.cpp">
+      <Filter>Source Files\UI\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Dependencies\zipper\src\zip.c">
+      <Filter>__dependencies\zipper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\patches\CKF4\UIDialogManager.cpp">
+      <Filter>Source Files\UI\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\jDialogs\jDialogs\include\jdialogs.cpp">
+      <Filter>__dependencies\jDialogs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\patches\TES\NiMain\NiRTTI.inl">
-      <Filter>Header Files</Filter>
-    </None>
     <None Include="src\typeinfo\ni_rtti.inl">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
     </None>
+    <None Include="src\patches\TES\NiMain\NiRTTI.inl">
+      <Filter>Header Files\RTTI\NiRTTI</Filter>
+    </None>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="resource.rc" />
+    <Image Include="..\Resources\check_darktheme.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\Resources\check.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\Resources\uncheck.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\Resources\uncheck_darktheme.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\Resources\toolbar.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\Resources\types.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\Resources\toolbar_light.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="..\Resources\logo.bmp">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

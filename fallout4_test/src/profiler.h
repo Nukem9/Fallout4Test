@@ -1,6 +1,6 @@
 #pragma once
 
-#if !SKYRIM64_USE_PROFILER
+#if !FALLOUT4_USE_PROFILER
 #define ProfileCounterInc(Name)			((void)0)
 #define ProfileCounterAdd(Name, Add)	((void)0)
 #define ProfileTimer(Name)				((void)0)

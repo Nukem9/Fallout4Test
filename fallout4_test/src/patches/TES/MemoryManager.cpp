@@ -1,13 +1,35 @@
-#include "../../common.h"
 #include "MemoryManager.h"
 
-void *MemAlloc(size_t Size, size_t Alignment = 0, bool Aligned = false, bool Zeroed = false)
+/*
+Author: Perchik71 29/04/2021
+This file is part of Fallout 4 Fixes source code.
+
+Adapted for Fallout 4 and Fallout 4 CK
+The original
+URL: https://github.com/Nukem9/SkyrimSETest/blob/master/skyrim64_test/src/patches/TES/MemoryManager.cpp
+*/
+
+/*
+Uses oneTBB (oneAPI Threading Building Blocks (oneTBB))
+URL: https://github.com/oneapi-src/oneTBB/tree/a803f276186fa2c286a357207832112265b448e4
+
+To increase the performance of the application, the functions are replaced with tbb
+*/
+
+#define MEM_THRESHOLD 2147483648
+
+/*
+==================
+MemAlloc
+==================
+*/
+LPVOID MemAlloc(UINT64 Size, UINT32 Alignment = 0, BOOL Aligned = FALSE, BOOL Zeroed = FALSE)
 {
 	ProfileCounterInc("Alloc Count");
 	ProfileCounterAdd("Byte Count", Size);
 	ProfileTimer("Time Spent Allocating");
 
-#if SKYRIM64_USE_VTUNE
+#if FALLOUT4_USE_VTUNE
 	__itt_heap_allocate_begin(ITT_AllocateCallback, Size, Zeroed ? 1 : 0);
 #endif
 
@@ -39,23 +61,28 @@ void *MemAlloc(size_t Size, size_t Alignment = 0, bool Aligned = false, bool Zer
 	if ((Size % Alignment) != 0)
 		Size = ((Size + Alignment - 1) / Alignment) * Alignment;
 
-#if SKYRIM64_USE_PAGE_HEAP
-	void *ptr = VirtualAlloc(nullptr, Size, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
+#if FALLOUT4_USE_PAGE_HEAP
+	LPVOID ptr = VirtualAlloc(NULL, Size, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
 #else
-	void *ptr = scalable_aligned_malloc(Size, Alignment);
+	LPVOID ptr = scalable_aligned_malloc(Size, Alignment);
 
 	if (ptr && Zeroed)
 		memset(ptr, 0, Size);
 #endif
 
-#if SKYRIM64_USE_VTUNE
+#if FALLOUT4_USE_VTUNE
 	__itt_heap_allocate_end(ITT_AllocateCallback, &ptr, Size, Zeroed ? 1 : 0);
 #endif
 
 	return ptr;
 }
 
-void MemFree(void *Memory, bool Aligned = false)
+/*
+==================
+MemFree
+==================
+*/
+VOID MemFree(LPVOID Memory, BOOL Aligned = FALSE)
 {
 	ProfileCounterInc("Free Count");
 	ProfileTimer("Time Spent Freeing");
@@ -63,70 +90,100 @@ void MemFree(void *Memory, bool Aligned = false)
 	if (!Memory)
 		return;
 
-#if SKYRIM64_USE_VTUNE
+#if FALLOUT4_USE_VTUNE
 	__itt_heap_free_begin(ITT_FreeCallback, Memory);
 #endif
 
-#if SKYRIM64_USE_PAGE_HEAP
+#if FALLOUT4_USE_PAGE_HEAP
 	VirtualFree(Memory, 0, MEM_RELEASE);
 #else
 	scalable_aligned_free(Memory);
 #endif
 
-#if SKYRIM64_USE_VTUNE
+#if FALLOUT4_USE_VTUNE
 	__itt_heap_free_end(ITT_FreeCallback, Memory);
 #endif
 }
 
-size_t MemSize(void *Memory)
+/*
+==================
+MemSize
+==================
+*/
+UINT64 MemSize(LPVOID Memory)
 {
-#if SKYRIM64_USE_VTUNE
+#if FALLOUT4_USE_VTUNE
 	__itt_heap_internal_access_begin();
 #endif
 
-#if SKYRIM64_USE_PAGE_HEAP
+#if FALLOUT4_USE_PAGE_HEAP
 	MEMORY_BASIC_INFORMATION info;
 	VirtualQuery(Memory, &info, sizeof(MEMORY_BASIC_INFORMATION));
 
-	size_t result = info.RegionSize;
+	UINT64 result = (UINT64)info.RegionSize;
 #else
-	size_t result = scalable_msize(Memory);
+	UINT64 result = (UINT64)scalable_msize(Memory);
 #endif
 
-#if SKYRIM64_USE_VTUNE
+#if FALLOUT4_USE_VTUNE
 	__itt_heap_internal_access_end();
 #endif
 
 	return result;
 }
 
-//
-// VS2015 CRT hijacked functions
-//
-void *hk_calloc(size_t Count, size_t Size)
+/*
+==================
+hk_calloc
+
+Replacement calloc
+==================
+*/
+LPVOID hk_calloc(size_t Count, size_t Size)
 {
 	// The allocated memory is always zeroed
-	return MemAlloc(Count * Size, 0, false, true);
+	return MemAlloc(Count * Size, 0, FALSE, TRUE);
 }
 
-void *hk_malloc(size_t Size)
+/*
+==================
+hk_malloc
+
+Replacement malloc
+==================
+*/
+LPVOID hk_malloc(size_t Size)
 {
 	return MemAlloc(Size);
 }
 
-void *hk_aligned_malloc(size_t Size, size_t Alignment)
+/*
+==================
+hk_aligned_malloc
+
+Replacement _aligned_malloc
+==================
+*/
+LPVOID hk_aligned_malloc(size_t Size, size_t Alignment)
 {
-	return MemAlloc(Size, Alignment, true);
+	return MemAlloc(Size, Alignment, TRUE);
 }
 
-void *hk_realloc(void *Memory, size_t Size)
+/*
+==================
+hk_realloc
+
+Replacement realloc
+==================
+*/
+LPVOID hk_realloc(LPVOID Memory, size_t Size)
 {
-	void *newMemory = nullptr;
+	LPVOID newMemory = NULL;
 
 	if (Size > 0)
 	{
 		// Recalloc behaves like calloc if there's no existing allocation. Realloc doesn't. Zero it anyway.
-		newMemory = MemAlloc(Size, 0, false, true);
+		newMemory = MemAlloc(Size, 0, FALSE, TRUE);
 
 		if (Memory)
 			memcpy(newMemory, Memory, std::min(Size, MemSize(Memory)));
@@ -136,65 +193,138 @@ void *hk_realloc(void *Memory, size_t Size)
 	return newMemory;
 }
 
-void *hk_recalloc(void *Memory, size_t Count, size_t Size)
+/*
+==================
+hk_realloc
+
+Replacement recalloc
+==================
+*/
+LPVOID hk_recalloc(LPVOID Memory, size_t Count, size_t Size)
 {
 	return hk_realloc(Memory, Count * Size);
 }
 
-void hk_free(void *Block)
+/*
+==================
+hk_free
+
+Replacement free
+==================
+*/
+VOID hk_free(LPVOID Block)
 {
 	MemFree(Block);
 }
 
-void hk_aligned_free(void *Block)
+/*
+==================
+hk_aligned_free
+
+Replacement _aligned_free
+==================
+*/
+VOID hk_aligned_free(LPVOID Block)
 {
-	MemFree(Block, true);
+	MemFree(Block, TRUE);
 }
 
-size_t hk_msize(void *Block)
+/*
+==================
+hk_msize
+
+Replacement _msize
+==================
+*/
+UINT64 hk_msize(LPVOID Block)
 {
 	return MemSize(Block);
 }
 
-char *hk_strdup(const char *str1)
+/*
+==================
+hk_Sleep
+
+Replacement WINAPI Sleep
+==================
+*/
+LPSTR hk_strdup(LPCSTR str1)
 {
-	size_t len = (strlen(str1) + 1) * sizeof(char);
-	return (char *)memcpy(hk_malloc(len), str1, len);
+	size_t len = (strlen(str1) + 1);
+	return (LPSTR)memcpy(hk_malloc(len), str1, len);
 }
 
 //
 // Internal engine heap allocators backed by VirtualAlloc()
 //
-void *MemoryManager::Allocate(MemoryManager *Manager, size_t Size, uint32_t Alignment, bool Aligned)
+LPVOID MemoryManager::Allocate(MemoryManager *Manager, UINT64 Size, UINT32 Alignment, BOOL Aligned)
 {
-	return MemAlloc(Size, Alignment, Aligned, true);
+	return MemAlloc(Size, Alignment, Aligned, TRUE);
 }
 
-void MemoryManager::Deallocate(MemoryManager *Manager, void *Memory, bool Aligned)
+VOID MemoryManager::Deallocate(MemoryManager *Manager, LPVOID Memory, BOOL Aligned)
 {
 	MemFree(Memory, Aligned);
 }
 
-size_t MemoryManager::Size(MemoryManager *Manager, void *Memory)
+UINT64 MemoryManager::Size(MemoryManager *Manager, LPVOID Memory)
 {
 	return MemSize(Memory);
 }
 
-void *ScrapHeap::Allocate(size_t Size, uint32_t Alignment)
+LPVOID ScrapHeap::Allocate(UINT64 Size, UINT32 Alignment)
 {
-	if (Size > MAX_ALLOC_SIZE)
-		return nullptr;
+	if (Size > g_ScrapSize)
+		return NULL;
 
 	return MemAlloc(Size, Alignment, Alignment != 0);
 }
 
-void ScrapHeap::Deallocate(void *Memory)
+VOID ScrapHeap::Deallocate(LPVOID Memory)
 {
 	MemFree(Memory);
 }
 
-void PatchMemory()
+/*
+==================
+Sys_LowPhysicalMemory
+==================
+*/
+DWORD64 FIXAPI Sys_GetPhysicalMemory(VOID)
 {
+	MEMORYSTATUSEX statex;
+	if (!GlobalMemoryStatusEx(&statex))
+		return 0;
+	return statex.ullTotalPhys;
+}
+
+/*
+==================
+Sys_LowPhysicalMemory
+==================
+*/
+BOOL FIXAPI Sys_LowPhysicalMemory(VOID) 
+{
+	return (Sys_GetPhysicalMemory() < MEM_THRESHOLD) ? TRUE : FALSE;
+}
+
+/*
+==================
+Fix_PatchMemory
+
+Implements the code in the process
+Changes memory allocation functions, but not all of them
+==================
+*/
+VOID FIXAPI Fix_PatchMemory(VOID)
+{
+	AssertMsg(Sys_LowPhysicalMemory(), "Not enough memory to run the program")
+
+	auto GB = Sys_GetPhysicalMemory() / (1024 * 1024 * 1024);
+	g_ScrapSize = (GB > 4) ? 0x8000000 : 0x4000000;
+	g_bhkMemSize = (GB > 8) ? 0x80000000 : 0x40000000;
+
+	// Turning on large pages (deprecated)
 	scalable_allocation_mode(TBBMALLOC_USE_HUGE_PAGES, 1);
 
 	PatchIAT(hk_calloc, "API-MS-WIN-CRT-HEAP-L1-1-0.DLL", "calloc");

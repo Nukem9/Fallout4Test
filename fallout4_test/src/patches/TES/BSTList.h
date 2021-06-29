@@ -4,8 +4,11 @@ template<typename T>
 class BSSimpleList
 {
 public:
+	using BSSimpleListNode = BSSimpleList<T>;
+	using BSSimpleListNodePtr = BSSimpleListNode*;
+public:
 	T m_item;
-	BSSimpleList<T> *m_pkNext;
+	BSSimpleListNodePtr m_pkNext;
 
 	BSSimpleList()
 	{
@@ -16,6 +19,24 @@ public:
 	~BSSimpleList()
 	{
 		RemoveAllNodes(nullptr, nullptr);
+	}
+
+	BSSimpleListNodePtr AddNode(BSSimpleListNodePtr Node, T& Item)
+	{
+		BSSimpleListNodePtr NewNode = new BSSimpleListNode();
+		NewNode->m_item = Item;
+
+		if (Node->m_pkNext)
+		{
+			NewNode->m_pkNext = Node->m_pkNext;
+			Node->m_pkNext = NewNode;
+		}
+		else
+		{
+			Node->m_pkNext = NewNode;
+		}
+
+		return NewNode;
 	}
 
 	static void operator delete(void *Ptr, std::size_t Size)

@@ -2,15 +2,35 @@
 #include "version_info.h"
 #include "profiler_internal.h"
 
-void Patch_Fallout4CreationKit();
+#include <filesystem>
+#include <shellapi.h>
 
-void ApplyPatches()
+/*
+
+This file is part of Fallout 4 Fixes source code.
+
+*/
+
+
+VOID FIXAPI Sys_DumpDisableBreakpoint(VOID);
+VOID FIXAPI Sys_DumpEnableBreakpoint(VOID);
+VOID FIXAPI MainFix_PatchFallout4CreationKit(VOID);
+VOID FIXAPI MainFix_PatchFallout4Game(VOID);
+
+/*
+==================
+Sys_ApplyPatches
+
+The main function for code injection, called from dump.cpp
+==================
+*/
+VOID FIXAPI Sys_ApplyPatches(VOID)
 {
 	// The EXE has been unpacked at this point
 	strcpy_s(g_GitVersion, VER_CURRENT_COMMIT_ID);
 	XUtil::SetThreadName(GetCurrentThreadId(), "Main Thread");
 
-#if SKYRIM64_USE_VTUNE
+#if FALLOUT4_USE_VTUNE
 	// Check if VTune is already active
 	const char *libITTPath = getenv("INTEL_LIBITTNOTIFY64");
 
@@ -28,28 +48,49 @@ void ApplyPatches()
 	switch (g_LoadType)
 	{
 	case GAME_EXECUTABLE_TYPE::CREATIONKIT_FALLOUT4:
-		Patch_Fallout4CreationKit();
+		if (g_INI.GetBoolean("Voice", "bRunCK32ForLips", FALSE))
+		{
+			// To generate .lip files, need creationkit32.exe
+
+			AssertMsg(std::filesystem::exists(std::filesystem::absolute(L"CreationKit32.exe").c_str()),
+					  "To generate .lip files, need creationkit32.exe")
+
+			ShellExecuteW(NULL, L"open", L"CreationKit32.exe", NULL, std::filesystem::absolute(L"").c_str(), SW_SHOW);
+			exit(0);
+		}
+		else
+			MainFix_PatchFallout4CreationKit();
+		break;
+	case GAME_EXECUTABLE_TYPE::GAME_FALLOUT4:
+		MainFix_PatchFallout4Game();
 		break;
 	}
 }
 
+/*
+==================
+DllMain
+
+==================
+*/
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD fdwReason, LPVOID lpReserved)
 {
     if (fdwReason == DLL_PROCESS_ATTACH)
     {
 		// Force this dll to be loaded permanently
 		HMODULE temp;
+		g_hModule = hModule;
 		GetModuleHandleEx(GET_MODULE_HANDLE_EX_FLAG_PIN | GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS, (LPCSTR)hModule, &temp);
 
 		// Then determine which exe is being loaded
 		g_LoadType = GAME_EXECUTABLE_TYPE::UNKNOWN;
 
-		char modulePath[MAX_PATH];
-		GetModuleFileNameA(GetModuleHandle(nullptr), modulePath, MAX_PATH);
+		CHAR modulePath[MAX_PATH];
+		GetModuleFileNameA(GetModuleHandle(NULL), modulePath, MAX_PATH);
 
-		char executableName[MAX_PATH];
+		CHAR executableName[MAX_PATH];
 		_strlwr_s(modulePath);
-		_splitpath_s(modulePath, nullptr, 0, nullptr, 0, executableName, ARRAYSIZE(executableName), nullptr, 0);
+		_splitpath_s(modulePath, NULL, 0, NULL, 0, executableName, ARRAYSIZE(executableName), NULL, 0);
 
 		switch (CRC32(executableName))
 		{
@@ -63,7 +104,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD fdwReason, LPVOID lpReserved)
 			break;
 
 		case CRC32("creationkit"):
-				g_LoadType = GAME_EXECUTABLE_TYPE::CREATIONKIT_FALLOUT4;
+			g_LoadType = GAME_EXECUTABLE_TYPE::CREATIONKIT_FALLOUT4;
 			break;
 		}
 
@@ -72,12 +113,17 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD fdwReason, LPVOID lpReserved)
 		{
 		case GAME_EXECUTABLE_TYPE::GAME_FALLOUT4:
 		case GAME_EXECUTABLE_TYPE::CREATIONKIT_FALLOUT4:
-#if SKYRIM64_CREATIONKIT_ONLY
+#if FALLOUT4_CREATIONKIT_ONLY
 			if (g_LoadType != GAME_EXECUTABLE_TYPE::CREATIONKIT_FALLOUT4)
 				return TRUE;
+#else
+			if (!g_INI.GetBoolean("Mode", "Extended", FALSE) && (g_LoadType != GAME_EXECUTABLE_TYPE::CREATIONKIT_FALLOUT4))
+			{
+				return TRUE;
+			}
 #endif
 
-			DumpEnableBreakpoint();
+			Sys_DumpEnableBreakpoint();
 			break;
 		}
     }

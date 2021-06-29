@@ -4,20 +4,23 @@
 
 namespace LogWindow
 {
-	HWND GetWindow();
-	HANDLE GetStdoutListenerPipe();
+	HWND FIXAPI GetWindow(VOID);
+	HANDLE FIXAPI GetStdoutListenerPipe(VOID);
 
-	bool Initialize();
-	bool CreateStdoutListener();
-	void LoadWarningBlacklist();
+	BOOL FIXAPI Initialize(VOID);
+	BOOL FIXAPI CreateStdoutListener(VOID);
+	VOID FIXAPI LoadWarningBlacklist(VOID);
 
 	LRESULT CALLBACK WndProc(HWND Hwnd, UINT Message, WPARAM wParam, LPARAM lParam);
 
-	void LogVa(const char *Format, va_list Va);
-	void Log(const char *Format, ...);
-	void LogWarningVa(int Type, const char *Format, va_list& Va);
-	void LogWarning(int Type, const char *Format, ...);
-	void LogWarningUnknown1(const char *Format, ...);
-	void LogWarningUnknown2(__int64 Unused, const char *Format, ...);
-	void LogAssert(const char *File, int Line, const char *Message, ...);
+	VOID FIXAPI LogVa(LPCSTR Format, va_list Va);
+	VOID FIXAPI Log(LPCSTR Format, ...);
+	VOID FIXAPI LogWarningVa(INT32 Type, LPCSTR Format, va_list& Va);
+	VOID FIXAPI LogWarning(INT32 Type, LPCSTR Format, ...);
+	VOID FIXAPI LogWarningUnknown1(LPCSTR Format, ...);
+	VOID FIXAPI LogWarningUnknown2(INT64 Unused, LPCSTR Format, ...);
+	VOID FIXAPI LogAssert(LPCSTR File, INT32 Line, LPCSTR Message, ...);
+
+	VOID FIXAPI LogWcVa(LPCWSTR Format, va_list Va);
+	VOID FIXAPI LogWc(LPCWSTR Format, ...);
 }

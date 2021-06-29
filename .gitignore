@@ -51,3 +51,14 @@ x86/
 
 fallout4_test/src/version_info.h
 fallout4_test/VTune Amplifier Results/
+fallout4_test/fallout4_test.vcxproj.user
+fallout4_test/resource.aps
+Dependencies/libdeflate.vcxproj.user
+Dependencies/libdeflate.vcxproj
+Dependencies/tbb
+Dependencies/json
+*.lnk
+
+# other
+*.cer
+*.bat

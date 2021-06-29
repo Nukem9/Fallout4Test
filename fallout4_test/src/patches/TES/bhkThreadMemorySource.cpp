@@ -1,77 +1,76 @@
-#include "../../common.h"
 #include "MemoryManager.h"
 #include "bhkThreadMemorySource.h"
 
-bhkThreadMemorySource::bhkThreadMemorySource()
+bhkThreadMemorySource::bhkThreadMemorySource(VOID)
 {
 	InitializeCriticalSection(&m_CritSec);
 }
 
-bhkThreadMemorySource::~bhkThreadMemorySource()
+bhkThreadMemorySource::~bhkThreadMemorySource(VOID)
 {
 	DeleteCriticalSection(&m_CritSec);
 }
 
-void *bhkThreadMemorySource::blockAlloc(int numBytes)
+LPVOID bhkThreadMemorySource::blockAlloc(UINT64 numBytes)
 {
-	return MemoryManager::Allocate(nullptr, numBytes, 16, true);
+	return MemoryManager::Allocate(NULL, numBytes, 16, TRUE);
 }
 
-void bhkThreadMemorySource::blockFree(void *p, int numBytes)
+VOID bhkThreadMemorySource::blockFree(LPVOID p, UINT64 numBytes)
 {
-	MemoryManager::Deallocate(nullptr, p, true);
+	MemoryManager::Deallocate(NULL, p, TRUE);
 }
 
-void *bhkThreadMemorySource::bufAlloc(int& reqNumBytesInOut)
+LPVOID bhkThreadMemorySource::bufAlloc(UINT64& reqNumBytesInOut)
 {
 	return blockAlloc(reqNumBytesInOut);
 }
 
-void bhkThreadMemorySource::bufFree(void *p, int numBytes)
+VOID bhkThreadMemorySource::bufFree(LPVOID p, UINT64 numBytes)
 {
 	return blockFree(p, numBytes);
 }
 
-void *bhkThreadMemorySource::bufRealloc(void *pold, int oldNumBytes, int& reqNumBytesInOut)
+LPVOID bhkThreadMemorySource::bufRealloc(LPVOID pold, UINT64 oldNumBytes, UINT64& reqNumBytesInOut)
 {
-	void *p = blockAlloc(reqNumBytesInOut);
+	LPVOID p = blockAlloc(reqNumBytesInOut);
 	memcpy(p, pold, oldNumBytes);
 	blockFree(pold, oldNumBytes);
 
 	return p;
 }
 
-void bhkThreadMemorySource::blockAllocBatch(void **ptrsOut, int numPtrs, int blockSize)
+VOID bhkThreadMemorySource::blockAllocBatch(LPVOID *ptrsOut, UINT64 numPtrs, UINT64 blockSize)
 {
-	for (int i = 0; i < numPtrs; i++)
+	for (INT32 i = 0; i < numPtrs; i++)
 		ptrsOut[i] = blockAlloc(blockSize);
 }
 
-void bhkThreadMemorySource::blockFreeBatch(void **ptrsIn, int numPtrs, int blockSize)
+VOID bhkThreadMemorySource::blockFreeBatch(LPVOID *ptrsIn, UINT64 numPtrs, UINT64 blockSize)
 {
-	for (int i = 0; i < numPtrs; i++)
+	for (INT32 i = 0; i < numPtrs; i++)
 		blockFree(ptrsIn[i], blockSize);
 }
 
-void bhkThreadMemorySource::getMemoryStatistics(class MemoryStatistics& u)
+VOID bhkThreadMemorySource::getMemoryStatistics(class MemoryStatistics& u)
 {
 	// Nothing
 }
 
-int bhkThreadMemorySource::getAllocatedSize(const void *obj, int nbytes)
+UINT64 bhkThreadMemorySource::getAllocatedSize(const LPVOID obj, UINT64 nbytes)
 {
-	Assert(false);
+	Assert(FALSE);
 	return 0;
 }
 
-void bhkThreadMemorySource::resetPeakMemoryStatistics()
+VOID bhkThreadMemorySource::resetPeakMemoryStatistics(VOID)
 {
 	// Nothing
 }
 
 #if FALLOUT4
-void *bhkThreadMemorySource::getExtendedInterface()
+LPVOID bhkThreadMemorySource::getExtendedInterface(VOID)
 {
-	return nullptr;
+	return NULL;
 }
 #endif

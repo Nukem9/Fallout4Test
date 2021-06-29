@@ -18,7 +18,7 @@
     <ProjectGuid>{BF4A1EFE-0BD9-49A1-BC02-2FA53027B0D7}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>fallout4_test</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -65,7 +65,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)Dependencies\detours;$(SolutionDir)Dependencies\zydis\msvc\zydis;$(SolutionDir)Dependencies\zydis\include;$(SolutionDir)Dependencies\tbb\include;$(SolutionDir)Dependencies;E:\Program Files %28x86%29\IntelSWTools\VTune Amplifier 2019\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(WindowsSDK_IncludePath);$(VC_IncludePath);$(SolutionDir)Dependencies\detours;$(SolutionDir)Dependencies\zydis\msvc\zydis;$(SolutionDir)Dependencies\zydis\include;$(SolutionDir)Dependencies\tbb\include;$(SolutionDir)Dependencies;E:\Program Files %28x86%29\IntelSWTools\VTune Amplifier 2019\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(OutDir);E:\Program Files %28x86%29\IntelSWTools\VTune Amplifier 2019\lib64;$(LibraryPath)</LibraryPath>
     <TargetName>winhttp</TargetName>
     <IntDir>$(SolutionDir)x64\$(ProjectName)\</IntDir>
@@ -104,7 +104,7 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>NOMINMAX;NDEBUG;_WINDOWS;_USRDLL;FALLOUT4=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>JDIALOG_4x4_DIALOG_UINT;NOMINMAX;NDEBUG;_WINDOWS;_USRDLL;FALLOUT4=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <UseMSVC>false</UseMSVC>
@@ -115,6 +115,8 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <AdditionalOptions>/D "NOMINMAX" /D "ZYDIS_STATIC_DEFINE"  /D "TRACY_ON_DEMAND" /D "_REENTRANT" /D "JEMALLOC_EXPORT=" %(AdditionalOptions)</AdditionalOptions>
       <OmitFramePointers>true</OmitFramePointers>
+      <DisableSpecificWarnings>4430;4267;4302;4311;4312;4996;4244;4477;26495</DisableSpecificWarnings>
+      <FloatingPointExceptions>true</FloatingPointExceptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -122,6 +124,9 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalOptions>/ignore:4104 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalLibraryDirectories>..\x64\Release-MT;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <StackReserveSize>32768</StackReserveSize>
+      <AdditionalDependencies>comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>powershell -ExecutionPolicy Bypass -File "$(SolutionDir)release.ps1" 4</Command>
@@ -159,27 +164,69 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Dependencies\jDialogs\include\jdialogs.h" />
+    <ClInclude Include="..\Dependencies\zipper\src\miniz.h" />
+    <ClInclude Include="..\Dependencies\zipper\src\zip.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="src\config.h" />
+    <ClInclude Include="src\erase_if.h" />
     <ClInclude Include="src\INIReader.h" />
+    <ClInclude Include="src\patches\CKF4\ActorWindow.h" />
+    <ClInclude Include="src\patches\CKF4\CellViewWindow.h" />
+    <ClInclude Include="src\patches\CKF4\DataWindow.h" />
     <ClInclude Include="src\patches\CKF4\Editor.h" />
     <ClInclude Include="src\patches\CKF4\EditorUI.h" />
-    <ClInclude Include="src\patches\CKF4\EditorUIDarkMode.h" />
+    <ClInclude Include="src\patches\CKF4\UIDialogManager.h" />
+    <ClInclude Include="src\patches\CKF4\PreferencesWindow.h" />
+    <ClInclude Include="src\patches\CKF4\ShowHideWindow.h" />
+    <ClInclude Include="src\patches\CKF4\TESCellViewScene_CK.h" />
+    <ClInclude Include="src\patches\CKF4\UIThemeMode.h" />
+    <ClInclude Include="src\patches\CKF4\EditorUIProgressDialog.h" />
+    <ClInclude Include="src\patches\CKF4\ExperimentalNuukem.h" />
+    <ClInclude Include="src\patches\CKF4\MainWindow.h" />
+    <ClInclude Include="src\patches\CKF4\ObjectWindow.h" />
+    <ClInclude Include="src\patches\CKF4\RenderWindow.h" />
+    <ClInclude Include="src\patches\CKF4\ResponseWindow.h" />
+    <ClInclude Include="src\patches\CKF4\TESDataFileHandler_CK.h" />
+    <ClInclude Include="src\patches\CKF4\TESFile_CK.h" />
+    <ClInclude Include="src\patches\CKF4\TranslateUnicode_CK.h" />
     <ClInclude Include="src\patches\CKF4\LogWindow.h" />
     <ClInclude Include="src\patches\CKF4\TESForm_CK.h" />
+    <ClInclude Include="src\patches\CKF4\UIBaseWindow.h" />
+    <ClInclude Include="src\patches\CKF4\UICheckboxControl.h" />
+    <ClInclude Include="src\patches\CKF4\UIGraphics.h" />
+    <ClInclude Include="src\patches\CKF4\UIImageList.h" />
+    <ClInclude Include="src\patches\CKF4\UIMenus.h" />
+    <ClInclude Include="src\patches\CKF4\UIProgressDialog.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\CheckBox.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\CustomBox.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\ComboBox.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\EditText.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\GroupBox.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\Header.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\ListBox.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\ListView.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\MDIClient.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\Memo.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\PageControl.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\ProgressBar.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\PushButton.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\RadioButton.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\RichEdit20.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\ScrollBar.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\StatusBar.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\TimeOfDay.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\ToolBar.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\TrackBar.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\TreeView.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\UpDown.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\VarCommon.h" />
+    <ClInclude Include="src\patches\CKF4\UITheme\PopupMenu.h" />
+    <ClInclude Include="src\patches\ComClasses.h" />
     <ClInclude Include="src\patches\offsets.h" />
-    <ClInclude Include="src\patches\INIReader.h" />
     <ClInclude Include="src\patches\TES\bhkThreadMemorySource.h" />
     <ClInclude Include="src\patches\TES\BSTList.h" />
-    <ClInclude Include="src\patches\TES\NavMesh.h" />
-    <ClInclude Include="src\patches\TES\NiMain\BSDynamicTriShape.h" />
-    <ClInclude Include="src\patches\TES\NiMain\BSGeometry.h" />
     <ClInclude Include="src\patches\TES\BSTArray.h" />
-    <ClInclude Include="src\patches\TES\NiMain\BSMultiBoundNode.h" />
-    <ClInclude Include="src\patches\TES\NiMain\BSMultiIndexTriShape.h" />
-    <ClInclude Include="src\patches\TES\NiMain\BSNiNode.h" />
-    <ClInclude Include="src\patches\TES\NiMain\BSTriShape.h" />
-    <ClInclude Include="src\patches\TES\NiMain\common.h" />
     <ClInclude Include="src\patches\TES\NiMain\NiAlphaProperty.h" />
     <ClInclude Include="src\patches\TES\NiMain\NiAVObject.h" />
     <ClInclude Include="src\patches\TES\NiMain\NiCamera.h" />
@@ -204,29 +251,84 @@
     <ClInclude Include="src\patches\TES\NiMain\NiTexture.h" />
     <ClInclude Include="src\patches\TES\NiMain\NiTransform.h" />
     <ClInclude Include="src\patches\TES\Setting.h" />
-    <ClInclude Include="src\patches\TES\TESForm_CK.h" />
     <ClInclude Include="src\profiler_internal.h" />
-    <ClInclude Include="src\dump.h" />
     <ClInclude Include="src\profiler.h" />
+    <ClInclude Include="src\tools\INIHookInputToFile.h" />
     <ClInclude Include="src\typeinfo\hk_rtti.h" />
     <ClInclude Include="src\typeinfo\ms_rtti.h" />
     <ClInclude Include="src\patches\TES\MemoryManager.h" />
     <ClInclude Include="src\common.h" />
+    <ClInclude Include="src\UtfStr.h" />
     <ClInclude Include="src\xutil.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\jDialogs\jDialogs\include\jdialogs.cpp" />
+    <ClCompile Include="..\Dependencies\zipper\src\zip.c" />
+    <ClCompile Include="src\INIReader.cpp" />
     <ClCompile Include="src\patches\bnet.cpp" />
+    <ClCompile Include="src\patches\CKF4\ActorWindow.cpp" />
+    <ClCompile Include="src\patches\CKF4\CellViewWindow.cpp" />
+    <ClCompile Include="src\patches\CKF4\DataWindow.cpp" />
     <ClCompile Include="src\patches\CKF4\Editor.cpp" />
-    <ClCompile Include="src\patches\CKF4\EditorUIDarkMode.cpp" />
+    <ClCompile Include="src\patches\CKF4\UIDialogManager.cpp" />
+    <ClCompile Include="src\patches\CKF4\PreferencesWindow.cpp" />
+    <ClCompile Include="src\patches\CKF4\EditorUIProgressDialog.cpp" />
+    <ClCompile Include="src\patches\CKF4\ExperimentalNuukem.cpp" />
+    <ClCompile Include="src\patches\CKF4\MainWindow.cpp" />
+    <ClCompile Include="src\patches\CKF4\ObjectWindow.cpp" />
+    <ClCompile Include="src\patches\CKF4\RenderWindow.cpp" />
+    <ClCompile Include="src\patches\CKF4\ResponseWindow.cpp" />
+    <ClCompile Include="src\patches\CKF4\ShowHideWindow.cpp" />
+    <ClCompile Include="src\patches\CKF4\TESCellViewScene_CK.cpp" />
+    <ClCompile Include="src\patches\CKF4\TESDataFileHandler_CK.cpp" />
+    <ClCompile Include="src\patches\CKF4\TESFile_CK.cpp" />
+    <ClCompile Include="src\patches\CKF4\TranslateUnicode_CK.cpp" />
     <ClCompile Include="src\patches\CKF4\LogWindow.cpp" />
     <ClCompile Include="src\patches\CKF4\TESForm_CK.cpp" />
+    <ClCompile Include="src\patches\CKF4\UIBaseWindow.cpp" />
+    <ClCompile Include="src\patches\CKF4\UICheckboxControl.cpp" />
+    <ClCompile Include="src\patches\CKF4\UIGraphics.cpp" />
+    <ClCompile Include="src\patches\CKF4\UIImageList.cpp" />
+    <ClCompile Include="src\patches\CKF4\UIMenus.cpp" />
+    <ClCompile Include="src\patches\CKF4\UIProgressDialog.cpp" />
+    <ClCompile Include="src\patches\CKF4\UIThemeMode.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\CheckBox.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\CustomBox.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\ComboBox.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\EditText.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\GroupBox.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\Header.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\ListBox.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\ListView.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\MDIClient.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\Memo.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\PageControl.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\ProgressBar.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\PushButton.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\RadioButton.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\RichEdit20.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\ScrollBar.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\StatusBar.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\TimeOfDay.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\ToolBar.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\TrackBar.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\TreeView.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\UpDown.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\VarCommon.cpp" />
+    <ClCompile Include="src\patches\CKF4\UITheme\PopupMenu.cpp" />
     <ClCompile Include="src\patches\offsets.cpp" />
     <ClCompile Include="src\patches\patches_f4ck.cpp" />
+    <ClCompile Include="src\patches\patches_f4tes.cpp" />
+    <ClCompile Include="src\patches\settings.cpp" />
+    <ClCompile Include="src\patches\TES\Achievements.cpp" />
     <ClCompile Include="src\patches\TES\NiMain\NiCollisionUtils.cpp" />
+    <ClCompile Include="src\patches\threading.cpp" />
+    <ClCompile Include="src\patches\window.cpp" />
+    <ClCompile Include="src\tools\INIHookInputToFile.cpp" />
+    <ClCompile Include="src\UtfStr.cpp" />
     <ClCompile Include="src\winhttp_exports.cpp" />
     <ClCompile Include="src\common.cpp" />
     <ClCompile Include="src\patches\CKF4\EditorUI.cpp" />
-    <ClCompile Include="src\patches\fileio.cpp" />
     <ClCompile Include="src\dllmain.cpp" />
     <ClCompile Include="src\dump.cpp" />
     <ClCompile Include="src\patches\TES\bhkThreadMemorySource.cpp" />
@@ -241,11 +343,22 @@
     <ClCompile Include="src\typeinfo\ms_rtti.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="cpp.hint" />
     <None Include="src\patches\TES\NiMain\NiRTTI.inl" />
     <None Include="src\typeinfo\ni_rtti.inl" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Resources\check.bmp" />
+    <Image Include="..\Resources\check_darktheme.bmp" />
+    <Image Include="..\Resources\logo.bmp" />
+    <Image Include="..\Resources\toolbar.bmp" />
+    <Image Include="..\Resources\toolbar_light.bmp" />
+    <Image Include="..\Resources\types.bmp" />
+    <Image Include="..\Resources\uncheck.bmp" />
+    <Image Include="..\Resources\uncheck_darktheme.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

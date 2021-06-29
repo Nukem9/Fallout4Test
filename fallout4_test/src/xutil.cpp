@@ -1,5 +1,46 @@
 #include "common.h"
 
+#include <strsafe.h>
+
+std::string __stdcall XUtil::Str::GetLastErrorToStr(DWORD err, const std::string& namefunc)
+{
+	// Retrieve the system error message for the last-error code
+
+	std::string str;
+	LPVOID lpMsgBuf;
+	LPVOID lpDisplayBuf;
+
+	FormatMessageA(
+		FORMAT_MESSAGE_ALLOCATE_BUFFER |
+		FORMAT_MESSAGE_FROM_SYSTEM |
+		FORMAT_MESSAGE_IGNORE_INSERTS,
+		NULL,
+		err,
+		MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+		(LPSTR)&lpMsgBuf,
+		0, NULL);
+
+	// Display the error message and exit the process
+
+	lpDisplayBuf = (LPVOID)LocalAlloc(LMEM_ZEROINIT,
+		(lstrlenA((LPCSTR)lpMsgBuf) + lstrlenA(namefunc.c_str()) + 40) * sizeof(CHAR));
+	StringCchPrintfA((LPSTR)lpDisplayBuf,
+		LocalSize(lpDisplayBuf) / sizeof(CHAR),
+		"%s failed with error %d: %s",
+		namefunc.c_str(), err, lpMsgBuf);
+	str = (LPSTR)lpDisplayBuf;
+
+	LocalFree(lpMsgBuf);
+	LocalFree(lpDisplayBuf);
+
+	return str;
+}
+
+std::string __stdcall XUtil::Str::GetLastErrorToStr(const std::string& namefunc)
+{
+	return GetLastErrorToStr(GetLastError(), namefunc);
+}
+
 VtableIndexUtil *VtableIndexUtil::GlobalInstance;
 
 VtableIndexUtil *VtableIndexUtil::Instance()
@@ -106,6 +147,28 @@ void XUtil::SetThreadName(uint32_t ThreadID, const char *ThreadName)
 	__except (EXCEPTION_EXECUTE_HANDLER)
 	{
 	}
+}
+
+size_t XUtil::Str::findCaseInsensitive(std::string data, std::string toSearch, size_t pos)
+{
+	// Convert complete given String to lower case
+	std::transform(data.begin(), data.end(), data.begin(), ::tolower);
+	// Convert complete given Sub String to lower case
+	std::transform(toSearch.begin(), toSearch.end(), toSearch.begin(), ::tolower);
+	// Find sub string in given string
+	return data.find(toSearch, pos);
+}
+
+std::string XUtil::Str::format(const char* fmt, ...)
+{
+	va_list va;
+	char message[2048];
+
+	va_start(va, fmt);
+	_vsnprintf(&message[0], _TRUNCATE, fmt, va);
+	va_end(va);
+
+	return message;
 }
 
 void XUtil::Trim(char *Buffer, char C)

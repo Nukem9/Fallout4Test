@@ -1,12 +1,20 @@
 #pragma once
 
 #pragma warning(disable:4094) // untagged 'struct' declared no symbols
+#pragma warning(disable:4172)
+
+#include <atomic>
+#include <algorithm>
+#include <functional>
+#include <string>
+#include <future>
+#include <locale>
 
 #define Assert(Cond)					if(!(Cond)) XUtil::XAssert(__FILE__, __LINE__, #Cond);
 #define AssertDebug(Cond)				if(!(Cond)) XUtil::XAssert(__FILE__, __LINE__, #Cond);
-#define AssertMsg(Cond, Msg)			AssertMsgVa(Cond, Msg);
-#define AssertMsgDebug(Cond, Msg)		AssertMsgVa(Cond, Msg);
 #define AssertMsgVa(Cond, Msg, ...)		if(!(Cond)) XUtil::XAssert(__FILE__, __LINE__, "%s\n\n" Msg, #Cond, ##__VA_ARGS__);
+#define AssertMsg(Cond, Msg)			AssertMsgVa(Cond, Msg)
+#define AssertMsgDebug(Cond, Msg)		AssertMsgVa(Cond, Msg)
 
 #define templated(...)					__VA_ARGS__
 #define AutoPtr(Type, Name, Offset)		static Type& Name = (*(Type *)((uintptr_t)GetModuleHandle(nullptr) + Offset))
@@ -84,6 +92,143 @@ struct __declspec(empty_bases)CheckOffset
 
 namespace XUtil
 {
+	namespace Parallel
+	{
+		// https://stackoverflow.com/questions/40805197/parallel-for-each-more-than-two-times-slower-than-stdfor-each
+		// fast than tbb::parallel_for_each
+
+		class join_threads
+		{
+		public:
+			explicit join_threads(std::vector<std::thread>& threads)
+				: threads_(threads) {}
+
+			~join_threads()
+			{
+				for (size_t i = 0; i < threads_.size(); ++i)
+				{
+					if (threads_[i].joinable())
+					{
+						threads_[i].join();
+					}
+				}
+			}
+
+		private:
+			std::vector<std::thread>& threads_;
+		};
+
+		template<typename Iterator, typename Func>
+		void for_each(Iterator first, Iterator last, Func func)
+		{
+			const auto length = std::distance(first, last);
+			if (0 == length) return;
+
+			const auto min_per_thread = 25u;
+			const unsigned max_threads = (length + min_per_thread - 1) / min_per_thread;
+			const auto hardware_threads = std::thread::hardware_concurrency();
+			const auto num_threads = std::min(hardware_threads != 0 ? hardware_threads : 2u, max_threads);
+			const auto block_size = length / num_threads;
+
+			std::vector<std::future<void>> futures(num_threads - 1);
+			std::vector<std::thread> threads(num_threads - 1);
+			join_threads joiner(threads);
+
+			auto block_start = first;
+			for (unsigned i = 0; i < num_threads - 1; ++i)
+			{
+				auto block_end = block_start;
+				std::advance(block_end, block_size);
+				std::packaged_task<void(void)> task([block_start, block_end, func]()
+					{
+						std::for_each(block_start, block_end, func);
+					});
+				futures[i] = task.get_future();
+				threads[i] = std::thread(std::move(task));
+				block_start = block_end;
+			}
+
+			std::for_each(block_start, last, func);
+
+			for (size_t i = 0; i < num_threads - 1; ++i)
+				futures[i].get();
+		}
+	}
+
+	namespace Str
+	{
+		// https://thispointer.com/implementing-a-case-insensitive-stringfind-in-c/
+
+		/*
+		 * Find Case Insensitive Sub String in a given substring
+		 */
+
+		size_t findCaseInsensitive(std::string data, std::string toSearch, size_t pos = 0);
+
+		// dirnameOf https://stackoverflow.com/questions/8518743/get-directory-from-file-path-c/34740989
+		static inline std::string dirnameOf(const std::string& fname)
+		{
+			size_t pos = fname.find_last_of("\\/");
+			return (std::string::npos == pos)
+				? ""
+				: fname.substr(0, pos);
+		}
+
+		// trim https://stackoverflow.com/questions/216823/whats-the-best-way-to-trim-stdstring
+
+		// trim from start (in place)
+		static inline std::string ltrim(std::string& s) {
+			s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](unsigned char ch) { return !std::isspace(ch); }));
+			return s;
+		}
+
+		static inline std::string ltrim(const std::string& s) {
+			return ltrim(const_cast<std::string&>(s));
+		}
+
+		// trim from end (in place)
+		static inline std::string rtrim(std::string& s) {
+			s.erase(std::find_if(s.rbegin(), s.rend(), [](unsigned char ch) { return !std::isspace(ch); }).base(), s.end());
+			return s;
+		}
+
+		static inline std::string rtrim(const std::string& s) {
+			return rtrim(const_cast<std::string&>(s));
+		}
+
+		// trim from both ends
+		static inline std::string& trim(std::string& s) {
+			return ltrim(rtrim(s));
+		}
+
+		static inline std::string trim(const std::string& s) {
+			return trim(const_cast<std::string&>(s));
+		}
+
+		// convert string to upper case
+		static inline std::string& UpperCase(std::string& s) {
+			std::for_each(s.begin(), s.end(), [](char& c) {
+				c = ::toupper(c);
+				});
+			return s;
+		}
+
+		// convert string to upper case
+		static inline std::string& LowerCase(std::string& s) {
+			std::for_each(s.begin(), s.end(), [](char& c) {
+				c = ::tolower(c);
+				});
+			return s;
+		}
+
+		// https://docs.microsoft.com/en-us/windows/win32/debug/retrieving-the-last-error-code
+		std::string __stdcall GetLastErrorToStr(DWORD err, const std::string& namefunc);
+		std::string __stdcall GetLastErrorToStr(const std::string& namefunc);
+
+		// formating string
+		std::string format(const char* fmt, ...);
+	}
+
 	void SetThreadName(uint32_t ThreadID, const char *ThreadName);
 	void Trim(char *Buffer, char C);
 	void XAssert(const char *File, int Line, const char *Format, ...);
@@ -112,5 +257,17 @@ namespace XUtil
 		static_assert(std::is_member_function_pointer_v<T> || (std::is_pointer_v<T> && std::is_function_v<typename std::remove_pointer<T>::type>));
 
 		DetourCall(Target, *(uintptr_t *)&Destination);
+	}
+
+	template <typename T>
+	void __stdcall DetourClassCall(uintptr_t target, T destination)
+	{
+		Detours::X64::DetourFunctionClass(target, destination, Detours::X64Option::USE_REL32_CALL);
+	}
+
+	template <typename T>
+	void __stdcall DetourClassJump(uintptr_t target, T destination)
+	{
+		Detours::X64::DetourFunctionClass(target, destination, Detours::X64Option::USE_REL32_JUMP);
 	}
 }

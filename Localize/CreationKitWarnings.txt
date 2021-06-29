@@ -1,0 +1,215 @@
+FORMS: EXTRA SPACE: Кольцо  has at least one space after it.
+FORMS: EXTRA SPACE: Титановая обшивка T-51  has at least one space after it.
+FORMS: EXTRA SPACE: Большое блюдо  has at least one space after it.
+FORMS: EXTRA SPACE: Гладкоствол с затвором: усиленный длинный ствол  has at least one space after it.
+FORMS: EXTRA SPACE: Армейская окраска T-51  has at least one space after it.
+FORMS: EXTRA SPACE: Окраска "Волт-Тек" T-51  has at least one space after it.
+FORMS: EXTRA SPACE: "Спаситель": удлиненный ствол  has at least one space after it.
+FORMS: EXTRA SPACE: Гладкоствол с затвором: длинный ствол  has at least one space after it.
+FORMS: EXTRA SPACE: Стрелковый осадный робот-охранник  has at least one space after it.
+FORMS: EXTRA SPACE: Осадный робот-охранник  has at least one space after it.
+FORMS: EXTRA SPACE: Терминал главной исследовательской лаборатории  has at least one space after it.
+FORMS: EXTRA SPACE: Персонаж говорит что-то про расу спутника, он отвечает  has at least one space after it.
+FORMS: EXTRA SPACE: Сцена разговоров/отношений с Ником  has at least one space after it.
+FORMS: EXTRA SPACE: Сцена разговоров/отношений с Маккриди  has at least one space after it.
+FORMS: EXTRA SPACE: Сцена разговоров/отношений с Хэнкоком  has at least one space after it.
+FORMS: EXTRA SPACE: Голова протектрона "Уничтожитель"  has at least one space after it.
+FORMS: EXTRA SPACE: Голова робомозга "Гоблин"  has at least one space after it.
+FORMS: EXTRA SPACE: Голова штурмотрона "Суккуб"  has at least one space after it.
+FORMS: EXTRA SPACE: Голова штурмотрона  has at least one space after it.
+FORMS: EXTRA SPACE: Терминал церебрального перепрограммирования  has at least one space after it.
+FORMS: EXTRA SPACE: Ключ от склада на Кранберри-Айленд  has at least one space after it.
+FORMS: EXTRA SPACE: Стейк из мяса матки болотников  has at least one space after it.
+FORMS: EXTRA SPACE: Обработчик задания для объектов FFNucleus  has at least one space after it.
+EDITOR: Editor ID 'Critters' for LAYR (0302022C) is not unique, previous object (02053D63) is type LAYR. Editor ID will be set to 'CrittersDUPLICATE000'.
+MASTERFILE: NavMesh ID 0022D139 in cell 'Пустоши' (0000E45C) (-26, -2) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: *** Cell Пустоши (0000DF76) combined data is owned by file DLCNukaWorld.esm due to ref TerrainShelfRocks01 (0300B03E)
+MASTERFILE: *** Cell Пустоши (0000DF97) combined data is owned by file DLCNukaWorld.esm due to ref RockCliff05_NF (0300B02E)
+MASTERFILE: *** Cell Пустоши (0000DF9C) combined data is owned by file DLCNukaWorld.esm due to ref RockCliff06 (0300B048)
+MASTERFILE: *** Cell Пустоши (0000DF3A) combined data is owned by file DLCNukaWorld.esm due to ref TreeMapleForest7 (0021E5F9)
+MASTERFILE: *** Cell Пустоши (0000DEF8) combined data is owned by file DLCNukaWorld.esm due to ref HWSingleCurveR01 (0021F448)
+MASTERFILE: *** Cell Пустоши (0000DF55) combined data is owned by file DLCNukaWorld.esm due to ref ExtRubble_Plain_Sm_Mid02 (0300A7D0)
+MASTERFILE: *** Cell Пустоши (0000DF74) combined data is owned by file DLCNukaWorld.esm due to ref HWSingleCurveL01 (0300A94B)
+MASTERFILE: *** Cell Пустоши (0000D8C5) combined data is owned by file DLCCoast.esm due to ref SkeletonBareBody01 (02021C29)
+MASTERFILE: *** Cell Пустоши (0000DF38) combined data is owned by file DLCNukaWorld.esm due to ref TreeMapleblasted05 (0021E5E9)
+MASTERFILE: *** Cell Пустоши (0000D8AA) combined data is owned by file DLCCoast.esm due to ref RockCliffCoast01 (02002932)
+MASTERFILE: *** Cell Пустоши (0000D8A1) combined data is owned by file DLCCoast.esm due to ref RockCliffCoast02 (02032C98)
+MASTERFILE: *** Cell Пустоши (0000DFBD) combined data is owned by file DLCNukaWorld.esm due to ref RockCliff06 (0300B0A1)
+MASTERFILE: *** Cell Пустоши (0000DF57) combined data is owned by file DLCNukaWorld.esm due to ref RockCliff01_NF (0300AAC7)
+MASTERFILE: *** Cell Пустоши (0000DF59) combined data is owned by file DLCNukaWorld.esm due to ref RockCliff04_NF (0300AAD2)
+MASTERFILE: *** Cell Пустоши (0000D8E8) combined data is owned by file DLCCoast.esm due to ref FishNetFallenCrates02 (0202084A)
+MASTERFILE: *** Cell Пустоши (0000D84E) combined data is owned by file DLCCoast.esm due to ref ExtRubble_Plain_Lg_Mid01 (02021C40)
+MASTERFILE: *** Cell Пустоши (0000DF52) combined data is owned by file DLCNukaWorld.esm due to ref HighwaySignPostLG01 (001F21AF)
+MASTERFILE: *** Cell Пустоши (0000D8AF) combined data is owned by file DLCCoast.esm due to ref RockCliffCoast_Large02 (02032B36)
+MASTERFILE: *** Cell Пустоши (0000DF15) combined data is owned by file DLCNukaWorld.esm due to ref RockCliff01_NF (0300B0A5)
+MASTERFILE: *** Cell Пустоши (0000DFB8) combined data is owned by file DLCNukaWorld.esm due to ref TerrainShelfRocks01 (0300B1A2)
+MASTERFILE: *** Cell Пустоши (0000D8A4) combined data is owned by file DLCCoast.esm due to ref TreeCluster01 (02021D81)
+MASTERFILE: *** Cell Пустоши (0000DF9B) combined data is owned by file DLCNukaWorld.esm due to ref DirtCliffLarge02 (0300AADD)
+MASTERFILE: *** Cell Пустоши (0000D887) combined data is owned by file DLCCoast.esm due to ref TreeCluster03 (02021D76)
+MASTERFILE: *** Cell Пустоши (0000D966) combined data is owned by file DLCCoast.esm due to ref DLC03MQ01SetStage45TriggerREF (02049D13)
+MASTERFILE: *** Cell Пустоши (0000DF36) combined data is owned by file DLCNukaWorld.esm due to ref RockCliff02_NF (0300AABF)
+MASTERFILE: *** Cell Пустоши (0000D8CB) combined data is owned by file DLCCoast.esm due to ref Bramble03 (0204F4D0)
+MASTERFILE: *** Cell Пустоши (0000D86D) combined data is owned by file DLCCoast.esm due to ref BeachFence_Broken01 (0201FF6A)
+MASTERFILE: *** Cell Пустоши (0000DF7A) combined data is owned by file DLCNukaWorld.esm due to ref RockCliff02_NF (0300AAD6)
+MASTERFILE: *** Cell Пустоши (0000DFDC) combined data is owned by file DLCNukaWorld.esm due to ref TreeCluster04 (0021AE58)
+MASTERFILE: *** Cell Пустоши (0000D8EA) combined data is owned by file DLCCoast.esm due to ref RockCliffCoast02 (0204F4D5)
+MASTERFILE: *** Cell Пустоши (0000D890) combined data is owned by file DLCCoast.esm due to ref DeerFenceSCLg03Curve (02032B33)
+MASTERFILE: *** Cell Пустоши (0000DFBA) combined data is owned by file DLCNukaWorld.esm due to ref TreeCluster08 (0021AE9B)
+MASTERFILE: *** Cell Пустоши (0000D8AD) combined data is owned by file DLCCoast.esm due to ref RockCliff05 (02021D14)
+MASTERFILE: *** Cell Пустоши (0000DFDE) combined data is owned by file DLCNukaWorld.esm due to ref TreeCluster06 (0021AE47)
+MASTERFILE: *** Cell Пустоши (0000D8FF) combined data is owned by file DLCCoast.esm due to ref BlastedForestBurntBranch01 (02033FE1)
+MASTERFILE: *** Cell Пустоши (0000D8C9) combined data is owned by file DLCCoast.esm due to ref CoastBeach01 (02020870)
+MASTERFILE: *** Cell Пустоши (0000DF35) combined data is owned by file DLCNukaWorld.esm due to ref TreeLeanScrub07 (00144794)
+MASTERFILE: *** Cell Пустоши (0000D88F) combined data is owned by file DLCCoast.esm due to ref TreeClusterDead03 (0021F1C1)
+MASTERFILE: *** Cell Пустоши (0000DF79) combined data is owned by file DLCNukaWorld.esm due to ref PGarageOut1x1CorWall01 (0300A91E)
+MASTERFILE: *** Cell Пустоши (0000D8C8) combined data is owned by file DLCCoast.esm due to ref RockCliffCoastSlab (00159376)
+MASTERFILE: *** Cell Пустоши (0000DF51) combined data is owned by file DLCNukaWorld.esm due to ref BillboardBldgSm01 (0304BF65)
+MASTERFILE: *** Cell Пустоши (0000D8EB) combined data is owned by file DLCCoast.esm due to ref RockPileL01_NF_Roots01 (0204F4D9)
+MASTERFILE: *** Cell Пустоши (0000DF5A) combined data is owned by file DLCNukaWorld.esm due to ref DirtCliffLarge02 (0300B046)
+MASTERFILE: *** Cell Пустоши (0000DFBB) combined data is owned by file DLCNukaWorld.esm due to ref RockCliff03_NF (0300AADF)
+MASTERFILE: *** Cell Пустоши (0000D891) combined data is owned by file DLCCoast.esm due to ref RockCliffCoast_Low01 (02032CCE)
+MASTERFILE: *** Cell Пустоши (0000DF16) combined data is owned by file DLCNukaWorld.esm due to ref TreeCluster06 (0021AEC0)
+MASTERFILE: *** Cell Пустоши (0000D8AC) combined data is owned by file DLCCoast.esm due to ref TreeCluster08 (02021E10)
+MASTERFILE: *** Cell Пустоши (0000E45B) combined data is owned by file DLCRobot.esm due to ref RaiderCampPole02 (01008351)
+MASTERFILE: *** Cell Пустоши (0000DF9A) combined data is owned by file DLCNukaWorld.esm due to ref RockCliff04 (0300AADB)
+MASTERFILE: *** Cell Пустоши (0000D886) combined data is owned by file DLCCoast.esm due to ref TreeCluster02 (02021D7A)
+MASTERFILE: *** Cell Пустоши (0000D88D) combined data is owned by file DLCCoast.esm due to ref ExtRubble_Plain_Lg_Mid01 (02021C45)
+MASTERFILE: *** Cell Пустоши (0000DF37) combined data is owned by file DLCNukaWorld.esm due to ref TreeCluster07 (0021AED1)
+MASTERFILE: *** Cell Пустоши (0000D8CA) combined data is owned by file DLCCoast.esm due to ref RockCliffCoastSlab (0204F4F0)
+MASTERFILE: *** Cell Пустоши (0000DF7B) combined data is owned by file DLCNukaWorld.esm due to ref RockCliff01_NF (0300B047)
+MASTERFILE: *** Cell Пустоши (0000E400) combined data is owned by file DLCCoast.esm due to ref TreeClusterDead01 (02032CCA)
+MASTERFILE: *** Cell Пустоши (0000DF58) combined data is owned by file DLCNukaWorld.esm due to ref RockCliff01 (0300AAC9)
+MASTERFILE: *** Cell Пустоши (0000F6B7) combined data is owned by file DLCRobot.esm due to ref TrashEdge01 (00142F3C)
+MASTERFILE: *** Cell Пустоши (0000D8E9) combined data is owned by file DLCCoast.esm due to ref Bramble03 (0204F4EF)
+MASTERFILE: *** Cell Пустоши (0000D8AE) combined data is owned by file DLCCoast.esm due to ref TreeStump04 (02021D39)
+MASTERFILE: *** Cell Пустоши (0000DFB9) combined data is owned by file DLCNukaWorld.esm due to ref DirtCliffLarge02 (00148FA4)
+MASTERFILE: *** Cell Пустоши (0000D8AB) combined data is owned by file DLCCoast.esm due to ref RockCliffCoastShort02 (0204F4F2)
+MASTERFILE: *** Cell Пустоши (0000D8A0) combined data is owned by file DLCCoast.esm due to ref TreeCluster06 (02032D00)
+MASTERFILE: *** Cell Пустоши (0000DFBC) combined data is owned by file DLCNukaWorld.esm due to ref DirtCliffLarge02 (0300B0A0)
+MASTERFILE: *** Cell Пустоши (000083DC) combined data is owned by file DLCCoast.esm due to ref ExtRubble_Plain_Lg_Mid01 (02032A2D)
+MASTERFILE: *** Cell Пустоши (0000D8E7) combined data is owned by file DLCCoast.esm due to ref Rowboat01Stand01_SC_DLC03 (02020862)
+MASTERFILE: *** Cell Пустоши (0000DBF9) combined data is owned by file DLCRobot.esm due to ref DecoMainA2x1Cor01 (01007EF9)
+MASTERFILE: *** Cell Пустоши (0000DF56) combined data is owned by file DLCNukaWorld.esm due to ref HWSingleStr01 (0300A7B7)
+MASTERFILE: *** Cell Пустоши (0000DF39) combined data is owned by file DLCNukaWorld.esm due to ref RockCliff04_NF (0300B04C)
+MASTERFILE: *** Cell Пустоши (0000DF18) combined data is owned by file DLCNukaWorld.esm due to ref HWSingleRampUp01 (0021F447)
+MASTERFILE: *** Cell Пустоши (000083DE) combined data is owned by file DLCCoast.esm due to ref RockCliffCoast_LargeCorner01 (02032AF3)
+MASTERFILE: *** Cell Пустоши (0000E419) combined data is owned by file DLCRobot.esm due to ref LvlYaoGuai (00197B2C)
+MASTERFILE: *** Cell Пустоши (0000DF54) combined data is owned by file DLCNukaWorld.esm due to ref VaultTecVan01Blue (03022D30)
+MASTERFILE: *** Cell Пустоши (0000D8C6) combined data is owned by file DLCCoast.esm due to ref DLC03InvColBox256 (02057745)
+MASTERFILE: *** Cell Пустоши (000083B1) combined data is owned by file DLCCoast.esm due to ref RockCliffCoast_Low01 (02032B6E)
+MASTERFILE: *** Cell Пустоши (0000DF30) combined data is owned by file DLCNukaWorld.esm due to ref BillboardBldgVerticalSm02 (001F21AC)
+MASTERFILE: *** Cell Пустоши (0000DF96) combined data is owned by file DLCNukaWorld.esm due to ref LeafPile01 (0304F493)
+MASTERFILE: NavMesh ID 002269BE in cell 'Пустоши' (0000E4BC) (-23, -5) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00228B35 in cell 'Пустоши' (0000E6CB) (-22, -21) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00217B76 in cell 'Пустоши' (0000E1E5) (12, -15) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 002472F7 in cell 'Пустоши' (0000E794) (-25, -27) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+FORMS: DOOR: Reference MetalTrapdoor01 001B9AE2 has portal to navmesh 0104F4D3 which is not found.  Please finalize navmesh in cell Пустоши 0000DFB7 to resolve this.
+MASTERFILE: NavMesh ID 0024970D in cell 'Пустоши' (0000D936) (3, 24) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00140AE2 in cell 'Пустоши' (0000D936) (3, 24) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249A5F in cell 'Пустоши' (0000E455) (-19, -2) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0017173C in cell 'Пустоши' (0000E455) (-19, -2) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0024746F in cell 'Пустоши' (0000E201) (15, -16) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249A64 in cell 'Пустоши' (0000E559) (-15, -10) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249A63 in cell 'Пустоши' (0000E559) (-15, -10) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00228788 in cell 'Пустоши' (0000E559) (-15, -10) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0024970F in cell 'Пустоши' (0000D917) (3, 25) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0024970E in cell 'Пустоши' (0000D917) (3, 25) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00140ADF in cell 'Пустоши' (0000D917) (3, 25) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249A60 in cell 'Пустоши' (0000E6EB) (-21, -22) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 002496B7 in cell 'Пустоши' (0000E6EB) (-21, -22) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249A67 in cell 'Пустоши' (0000E666) (-20, -18) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00228B3D in cell 'Пустоши' (0000E666) (-20, -18) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249718 in cell 'Пустоши' (0000E0D3) (7, -6) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0018486E in cell 'Пустоши' (0000E0D3) (7, -6) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00172975 in cell 'Пустоши' (0000E413) (-19, 0) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249A70 in cell 'Пустоши' (0000E825) (-19, -31) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00140FC7 in cell 'Пустоши' (0000E825) (-19, -31) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249A73 in cell 'Пустоши' (0000E822) (-17, -32) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249A72 in cell 'Пустоши' (0000E822) (-17, -32) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249A71 in cell 'Пустоши' (0000E822) (-17, -32) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0018FB3A in cell 'Пустоши' (0000E822) (-17, -32) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 002496B2 in cell 'Пустоши' (0000E53C) (-19, -9) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00184BAD in cell 'Пустоши' (0000E53C) (-19, -9) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0022F301 in cell 'Пустоши' (0000E276) (22, -20) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249715 in cell 'Пустоши' (0000E4CA) (-4, -6) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249714 in cell 'Пустоши' (0000E4CA) (-4, -6) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249713 in cell 'Пустоши' (0000E4CA) (-4, -6) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 000F93F1 in cell 'Пустоши' (0000E4CA) (-4, -6) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0024749E in cell 'Пустоши' (0000E647) (-22, -17) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249A82 in cell 'Пустоши' (0000DB13) (23, 8) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 001F60FF in cell 'Пустоши' (0000DB13) (23, 8) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0022CF74 in cell 'Пустоши' (0000E522) (-26, -8) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249B06 in cell 'Пустоши' (0000DFCF) (-16, 2) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0023AFEC in cell 'Пустоши' (0000DFCF) (-16, 2) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 002496A3 in cell 'Пустоши' (0000DAF4) (23, 9) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 001F6100 in cell 'Пустоши' (0000DAF4) (23, 9) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 002496BD in cell 'Пустоши' (0000E70D) (-22, -23) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00135C01 in cell 'Пустоши' (0000E70D) (-22, -23) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 002496BA in cell 'Пустоши' (0000E51D) (-21, -8) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 002496B9 in cell 'Пустоши' (0000E51D) (-21, -8) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0015FE96 in cell 'Пустоши' (0000E51D) (-21, -8) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249B0C in cell 'Пустоши' (0000E465) (-2, -3) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249B0B in cell 'Пустоши' (0000E465) (-2, -3) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0024601F in cell 'Пустоши' (0000E465) (-2, -3) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249B10 in cell 'Пустоши' (0000E770) (-22, -26) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 002472FC in cell 'Пустоши' (0000E770) (-22, -26) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249B11 in cell 'Пустоши' (0000E6D4) (-31, -21) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0022C850 in cell 'Пустоши' (0000E6D4) (-31, -21) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249712 in cell 'Пустоши' (0000E4A9) (-4, -5) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249711 in cell 'Пустоши' (0000E4A9) (-4, -5) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249710 in cell 'Пустоши' (0000E4A9) (-4, -5) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00119FF3 in cell 'Пустоши' (0000E4A9) (-4, -5) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249719 in cell 'Пустоши' (0000E406) (-6, 0) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00239B0F in cell 'Пустоши' (0000E406) (-6, 0) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0017E164 in cell 'Пустоши' (0000DF80) (-3, 4) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249B19 in cell 'Пустоши' (0000DB35) (20, 7) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00209862 in cell 'Пустоши' (0000DB35) (20, 7) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 002496B3 in cell 'Пустоши' (0000E4B9) (-20, -5) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0023AFC3 in cell 'Пустоши' (0000E4B9) (-20, -5) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00249716 in cell 'Пустоши' (0000DB44) (4, 7) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 00231DAF in cell 'Пустоши' (0000DB44) (4, 7) in WorldSpace 'Commonwealth' (0000003C) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0201C8FE in cell 'Пустоши' (02000BEB) (12, 9) in WorldSpace 'DLC03FarHarbor' (02000B0F) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 02054439 in cell 'Пустоши' (0200274E) (-10, 8) in WorldSpace 'DLC03FarHarbor' (02000B0F) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 02054437 in cell 'Пустоши' (0200274E) (-10, 8) in WorldSpace 'DLC03FarHarbor' (02000B0F) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0204EB61 in cell 'Пустоши' (0200274E) (-10, 8) in WorldSpace 'DLC03FarHarbor' (02000B0F) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0205443C in cell 'Пустоши' (02002740) (-8, 11) in WorldSpace 'DLC03FarHarbor' (02000B0F) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0204EB65 in cell 'Пустоши' (02002740) (-8, 11) in WorldSpace 'DLC03FarHarbor' (02000B0F) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 02043819 in cell 'Пустоши' (02000B90) (8, -9) in WorldSpace 'DLC03FarHarbor' (02000B0F) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 02054436 in cell 'Пустоши' (02002749) (-9, 8) in WorldSpace 'DLC03FarHarbor' (02000B0F) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0204EB62 in cell 'Пустоши' (02002749) (-9, 8) in WorldSpace 'DLC03FarHarbor' (02000B0F) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0201C900 in cell 'Пустоши' (02000B43) (13, 9) in WorldSpace 'DLC03FarHarbor' (02000B0F) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 02044102 in cell 'Пустоши' (02000C1D) (8, 9) in WorldSpace 'DLC03FarHarbor' (02000B0F) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 02049FF7 in cell 'Пустоши' (02000CA4) (2, -4) in WorldSpace 'DLC03FarHarbor' (02000B0F) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 02025F19 in cell 'Пустоши' (02000CE5) (0, -14) in WorldSpace 'DLC03FarHarbor' (02000B0F) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0202131E in cell 'Пустоши' (02000C01) (11, -2) in WorldSpace 'DLC03FarHarbor' (02000B0F) has invalid cover data.  It will be removed.
+MASTERFILE: Ref (0204974E) to base object Fern01_DLC03_04 (02003C5B) in cell Пустоши (8, 6) (02000C20) should be persistent but is not.
+MASTERFILE: NavMesh ID 02043219 in cell 'Пустоши' (02000B4B) (10, -8) in WorldSpace 'DLC03FarHarbor' (02000B0F) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 0201AF17 in cell 'Пустоши' (02000DE0) (-12, 0) in WorldSpace 'DLC03FarHarbor' (02000B0F) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 030328D9 in cell 'Пустоши' (03003422) (-11, -6) in WorldSpace 'NukaWorld' (0300290F) has invalid cover data.  It will be removed.
+MASTERFILE: Potentially Invalid Z value (-70547.19) on reference:REFR Form '' (0300ED8E) to MSTT form 'SkeletonClothedF01' (0008B214) in Cell 'Пустоши' (03003349) (-8, 16) in WorldSpace 'NukaWorld' (0300290F)
+MASTERFILE: Potentially Invalid Z value (-73753.95) on reference:REFR Form '' (0300ED9A) to ALCH form 'NukaCola' (0004835D) in Cell 'Пустоши' (03003204) (-3, 16) in WorldSpace 'NukaWorld' (0300290F)
+MASTERFILE: Potentially Invalid Z value (-73753.95) on reference:REFR Form '' (0300ED9C) to MISC form 'NukaColaEmpty' (0004835A) in Cell 'Пустоши' (03003204) (-3, 16) in WorldSpace 'NukaWorld' (0300290F)
+MASTERFILE: Potentially Invalid Z value (-73753.95) on reference:REFR Form '' (0300ED9D) to MISC form 'NukaColaEmpty' (0004835A) in Cell 'Пустоши' (03003204) (-3, 16) in WorldSpace 'NukaWorld' (0300290F)
+MASTERFILE: Potentially Invalid Z value (-73753.95) on reference:REFR Form '' (0300ED9E) to MISC form 'NukaColaEmpty' (0004835A) in Cell 'Пустоши' (03003203) (-3, 17) in WorldSpace 'NukaWorld' (0300290F)
+MASTERFILE: Potentially Invalid Z value (-73834.35) on reference:REFR Form '' (0300EDA1) to MSTT form 'SkeletonBareBodyHeadless' (000E1B85) in Cell 'Пустоши' (03003203) (-3, 17) in WorldSpace 'NukaWorld' (0300290F)
+MASTERFILE: Potentially Invalid Z value (-80350.69) on reference:REFR Form '' (0300ED9F) to MSTT form 'SkeletonClothedF05' (001A4D44) in Cell 'Пустоши' (0300320A) (-3, 10) in WorldSpace 'NukaWorld' (0300290F)
+MASTERFILE: NavMesh ID 03053AF0 in cell 'Пустоши' (03003009) (5, 3) in WorldSpace 'NukaWorld' (0300290F) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 03035DD7 in cell 'Пустоши' (03003009) (5, 3) in WorldSpace 'NukaWorld' (0300290F) has invalid cover data.  It will be removed.
+MASTERFILE: NavMesh ID 03032A21 in cell 'Пустоши' (03003054) (4, -7) in WorldSpace 'NukaWorld' (0300290F) has invalid cover data.  It will be removed.
+CELLS: Cell name Колониальный универсальный магазин for cell PrewarTVStudio (000ECCFD) is too long. The maximum length allowed is 33 characters.
+CELLS: Cell name Вербовочный центр Национальной гвардии for cell NationalGuardTrainingYard01 (000532B6) is too long. The maximum length allowed is 33 characters.
+CELLS: Cell name Федеральный продовольственный склад for cell FederalRationStockpile01 (00035FF4) is too long. The maximum length allowed is 33 characters.
+CELLS: Cell name Подготовительная школа Восточного Бостона for cell EastBostonPrep01 (000379C6) is too long. The maximum length allowed is 33 characters.
+CELLS: Cell name Альтернативная ячейка Братства Стали for cell BoSAliasCell (000D1064) is too long. The maximum length allowed is 33 characters.
+CELLS: Cell name Радиологический центр Массачусетс-Бэй for cell TheaterMassBayMedicalCenter02 (001C53EF) is too long. The maximum length allowed is 33 characters.
+CELLS: Cell name Психиатрическая больница "Парсонс" for cell ParsonsState02 (0005FBB5) is too long. The maximum length allowed is 33 characters.
+CELLS: Cell name Консервный завод Большого Луковски for cell LongneckLukowskis01 (0003B6ED) is too long. The maximum length allowed is 33 characters.
+CELLS: Cell name Сувенирный магазин научного центра for cell CambridgeScienceCenter01 (000517B3) is too long. The maximum length allowed is 33 characters.
+CELLS: Cell name Оружейный склад Национальной гвардии for cell NationalGuardTrainingYard03 (000E2F6F) is too long. The maximum length allowed is 33 characters.
+CELLS: Cell name Полицейское управление южного Бостона for cell SouthBostonPoliceDepartment01 (0009AE28) is too long. The maximum length allowed is 33 characters.
+CELLS: Cell name Спутниковая станция ВВС США "Оливия" for cell USAFSatellite01 (00068F7C) is too long. The maximum length allowed is 33 characters.
+CELLS: Cell name Океанологическая лаборатория Наханта for cell NahantOceanSociety02 (0007FF42) is too long. The maximum length allowed is 33 characters.
+CELLS: Cell name Штаб-квартира корпорации "Уилсон Атоматойз" for cell AtomatoysCorporateHQ01 (0009087E) is too long. The maximum length allowed is 33 characters.
+CELLS: Cell name Региональная штаб-квартира "Волт-Тек" for cell VaultTecOffice01 (0001B0F7) is too long. The maximum length allowed is 33 characters.
+CELLS: Cell name Политехническая школа Центрального Бостона for cell DBTechHighSchool01 (0003AC6D) is too long. The maximum length allowed is 33 characters.
+CELLS: Cell name Служебное здание ветроэлектростанции for cell DLC03WindFarmBuilding01 (0202E12D) is too long. The maximum length allowed is 33 characters.
